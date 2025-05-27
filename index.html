@@ -108,7 +108,7 @@
 
     #watermark {
       position: absolute;
-      bottom: 10px;
+      top: 10px;
       width: 100%;
       text-align: center;
       font-size: 12px;
@@ -130,6 +130,8 @@
   </style>
 </head>
 <body>
+  <div id="watermark">created by @navelles</div>
+
   <div id="container">
     <button id="showBtn">Твой день!</button>
     <div id="message">
@@ -152,8 +154,6 @@
       <div class="heart"></div>
     </div>
   </div>
-
-  <div id="watermark">created by @navelles</div>
 
   <script>
     const btn = document.getElementById('showBtn');

@@ -2,13 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>С Днём Рождения!</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
@@ -18,8 +18,8 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
       padding: 20px;
+      overflow: hidden;
     }
 
     #container {
@@ -47,16 +47,60 @@
 
     #message {
       display: none;
-      margin-top: 30px;
+      margin-top: 20px;
       padding: 20px;
       border: 2px dashed #ff8aa3;
       border-radius: 15px;
       background-color: rgba(255, 255, 255, 0.8);
-      font-size: 16px;
+      font-size: 14px;
       color: #333;
       line-height: 1.6;
-      max-height: 80vh;
+      animation: fadeIn 1s ease-in-out;
+      max-height: 70vh;
       overflow-y: auto;
+    }
+
+    .heart {
+      margin-top: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #ff5a91;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: #ff5a91;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -20px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 20px;
+      top: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
     }
 
     @media (max-width: 600px) {
@@ -66,7 +110,7 @@
       }
 
       #message {
-        font-size: 15px;
+        font-size: 13px;
       }
     }
   </style>
@@ -75,20 +119,23 @@
   <div id="container">
     <button id="showBtn">Твой день!</button>
     <div id="message">
-      <p>С днём рождения, мое маленькое солнышко!<br><br>
-      В этот особенный день хочу пожелать тебе самого главного — настоящего счастья.
-      Пусть каждый день приносит тебе радость, вдохновение и уверенность в том, что ты идёшь по своему пути.
-      Ты заслуживаешь только самого лучшего — любви, тепла, поддержки и много-много поводов для улыбок.<br><br>
-      Спасибо тебе за всё. За то, что ты всегда рядом — и в радости, и в трудные моменты.
-      За твою доброту, терпение, за умение слушать и быть рядом, когда это особенно важно.
-      Ты — человек, с которым легко, светло и спокойно. И я очень это ценю.<br><br>
-      Пусть жизнь дарит тебе яркие события, верных людей рядом, удачу во всех делах
-      и внутреннюю гармонию, которая греет изнутри.
-      Пусть сбудется всё, о чём ты мечтаешь — даже то, о чём не говоришь вслух.<br><br>
-      Ты умеешь быть сильной, но я желаю, чтобы тебе не приходилось быть такой слишком часто.
-      Пусть рядом всегда будут те, кто поддержит, обнимет и скажет: "Я с тобой".<br><br>
-      С праздником тебя, коть!<br>
-      Пусть впереди будет много светлых дней и приятных сюрпризов.</p>
+      <p>
+        С днём рождения, мое маленькое солнышко!<br><br>
+        В этот особенный день хочу пожелать тебе самого главного — настоящего счастья.
+        Пусть каждый день приносит тебе радость, вдохновение и уверенность в том, что ты идёшь по своему пути.
+        Ты заслуживаешь только самого лучшего — любви, тепла, поддержки и много-много поводов для улыбок.<br><br>
+        Спасибо тебе за всё. За то, что ты всегда рядом — и в радости, и в трудные моменты.
+        За твою доброту, терпение, за умение слушать и быть рядом, когда это особенно важно.
+        Ты — человек, с которым легко, светло и спокойно. И я очень это ценю.<br><br>
+        Пусть жизнь дарит тебе яркие события, верных людей рядом, удачу во всех делах
+        и внутреннюю гармонию, которая греет изнутри.
+        Пусть сбудется всё, о чём ты мечтаешь — даже то, о чём не говоришь вслух.<br><br>
+        Ты умеешь быть сильной, но я желаю, чтобы тебе не приходилось быть такой слишком часто.
+        Пусть рядом всегда будут те, кто поддержит, обнимет и скажет: "Я с тобой".<br><br>
+        С праздником тебя, коть!<br>
+        Пусть впереди будет много светлых дней и приятных сюрпризов.
+      </p>
+      <div class="heart"></div>
     </div>
   </div>
 
